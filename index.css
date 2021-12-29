@@ -170,7 +170,7 @@ form.invalid input[type="email"]::after {
     } */
 
     .innerColumn .logo {
-        background-color: #ff1;
+        background-color: #fff;
         width: 100%;
         height: 120px;
         position: fixed;
