@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+:root {
+    --primary-red: hsl(0, 36%, 70%);
+    --secondary-red: hsl(0, 93%, 68%);
+    --neutral-red: hsl(0, 6%, 24%);
+    --primary-gradient: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    --secondary-gradient: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    --main-font: 'Josefin Sans';
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: var(--main-font);
+}
+
+h1 {
+    font-size: 4.5em;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    color: var(--neutral-red);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+h1 span {
+    font-weight: 300;
+    color: var(--primary-red);
+}
+
+p {
+    font-size: 16px;
+    color: var(--primary-red);
+    line-height: 1.6em;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.innerColumn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 450px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.innerColumn .logo img {
+    position: fixed;
+    top: 8%;
+    left: 12%;
+}
+
+.innerColumn .bodyContent form {
+    display: flex;
+    width: 100%;
+    height: 3.5em;
+    background-color: #fff;
+    border-radius: 50px;
+    margin-top: 35px;
+    border: 1px solid var(--primary-red);
+}
+
+.innerColumn .bodyContent form input[type="email"] {
+    flex: 75%;
+    border: 0;
+    border-radius: 50px;
+    padding-left: 50px;
+    box-sizing: border-box;
+    font-family: var(--main-font);
+    outline: none;
+}
+
+.innerColumn .bodyContent form input[type="email"]::placeholder {
+    color: var(--primary-red);
+    font-weight: 400;
+    opacity: 0.6;
+}
+
+.innerColumn .bodyContent form button {
+    flex: 25%;
+    background: var(--secondary-gradient);
+    border: 0;
+    border-radius: 50px;
+    margin-left: 10px;
+    transform: scale(1.03);
+    box-shadow: 0px 10px 15px 0px hsla(0, 36%, 70%, 30%);
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+
+.innerColumn .bodyContent form button:hover {
+    background: hsl(0, 80%, 86%);
+    box-shadow: 0px 10px 15px 0px hsla(0, 36%, 70%, 60%);
+}
+
+.aside {
+    margin: 0;
+    padding: 0;
+    height: 99vh;
+}
+
+.aside img {
+    height: 100vh;
+}
+
+#errorMessage {
+    display: none;
+    transform: translateY(25%);
+}
+
+/* Validación del correo electrónico */
+form.invalid {
+    border: 1px solid var(--secondary-red) !important;
+    position: relative;
+}
+
+form.invalid #errorMessage {
+    display: block;
+}
+
+form.invalid::after {
+    content: 'Please enter a valid email';
+    position: absolute;
+    bottom: 0%;
+    left: 10%;
+    width: 100%;
+    height: auto;
+    transform: translateY(250%);
+    color: var(--secondary-red);
+}
+
+form.invalid input[type="email"] {
+    color: var(--secondary-red);
+}
+
+form.invalid input[type="email"]::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+@media only screen and (max-width: 525px) {
+    main {
+        flex-direction: column-reverse;
+    }
+
+    .innerColumn {
+        max-width: 100%;
+        width: 100%;
+        padding: 0 25px;
+        box-sizing: border-box;
+    }
+
+    
+    /* .innerColumn .bodyContent {
+        padding: 0 50px;
+        box-sizing: border-box;
+    } */
+
+    .innerColumn .logo {
+        background-color: #fff;
+        width: 100%;
+        height: 120px;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .innerColumn .logo img {
+        top: 5%;
+        left: 7%;
+    }
+
+    h1  {
+        font-size: 3em;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    p {
+        text-align: center;
+        font-size: 16px;
+        padding: 0 25px;
+    }
+
+    form {
+        margin-bottom: 100px;
+    }
+
+    .aside {
+        height: auto;
+    }
+
+    .aside img {
+        height: 450px;
+        width: 100%;
+        object-fit: cover;
+        object-position: 50% -70%;
+    }
+}
+
+@media only screen and (max-width:375px) {
+    .aside img {
+        height: 350px;
+        width: 100%;
+        object-fit: cover;
+        object-position: 50% -54%;
+    }
+}
